@@ -6,6 +6,7 @@ import {
   FlatList,
   TextInput,
   Button,
+  TouchableOpacity,
 } from "react-native";
 
 // Row component for each user
@@ -15,17 +16,17 @@ const UserItem = ({
   favouritecolour,
   onDelete,
 
-}: {
-  name: string;
-  age: number;
-  favouritecolour: string;
 }) => (
+    
   <View style={styles.item}>
     <Text style={styles.name}>Name: {name}</Text>
     <Text style={styles.age}>Age: {age}</Text>
     <Text style={styles.color}>Favourite Colour: {favouritecolour}</Text>
+    {/*if you wanna add a picture or button */}
+
+    {/*The costom delete button*/}
     <TouchableOpacity style={styles.deletebutton}onPress={onDelete}>
-    <text style={styles.btnText}>Delete</text>
+    <Text style={styles.btnText}>Delete</Text>
     </TouchableOpacity>
 
   </View>
@@ -38,7 +39,7 @@ export default function App() {
     { id: "2", name: "Caryn", age: 30, favouritecolour: "Blue" },
     { id: "3", name: "Jaco", age: 22, favouritecolour: "Green" },
     { id: "4", name: "Mihle", age: 28, favouritecolour: "Yellow" },
-    { id: "5", name: "Koosie", age: 12, favouritecolour: "Purple" },
+    { id: "5", name: "Koosie", age: 19, favouritecolour: "Purple" },
   ]);
 
   // State for input fields
@@ -61,8 +62,9 @@ export default function App() {
     setNewColour("");
   
   };
-
-  const deleteUser = (id)=>{
+// This is our onDelete User, the onDelete parameter of the flatlist calls
+// this fuction.
+  const deleteUser = (id)=> {
     setUsers (users.filter(user=>user.id !==id))
   }
  
