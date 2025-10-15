@@ -71,16 +71,18 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>👋 My Dynamic FlatList</Text>
+      <Text style={styles.title}>❤️My FlatList App</Text>
 
       {/* Input fields */}
       <View style={styles.inputContainer}>
+        <Text> Name</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter name"
           value={newName}
           onChangeText={setNewName}
         />
+        <Text> Age</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter age"
@@ -88,6 +90,7 @@ export default function App() {
           onChangeText={setNewAge}
           keyboardType="numeric"
         />
+        <Text> Favorite Color</Text>
         <TextInput
           style={styles.input}
           placeholder="Enter favourite colour"
@@ -118,12 +121,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#8cdde7ff",
     paddingTop: 50,
     paddingHorizontal: 20,
   },
   title: {
-    fontSize: 22,
+    fontSize: 15,
     fontWeight: "bold",
     marginBottom: 15,
   },
@@ -138,10 +141,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   item: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#1d8facff",
     padding: 15,
     marginVertical: 8,
     borderRadius: 8,
+    borderWidth: 5,
+    
   },
   name: {
     fontSize: 18,
@@ -166,6 +171,7 @@ const styles = StyleSheet.create({
       color:"white",
       fontWeight:"bold",
   },
+  
   
 
 });
